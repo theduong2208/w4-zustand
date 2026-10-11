@@ -7,10 +7,9 @@ interface Props {
 }
 
 export default function FavoriteButton({ product }: Props) {
-  // Fine-grained selectors — each component re-renders only when its slice changes
   const toggleFavorite = useFavoritesStore((s) => s.toggleFavorite);
-  const isFavorite = useFavoritesStore((s) => s.isFavorite);
-  const liked = isFavorite(product.id);
+  // Subscribe trực tiếp vào boolean để component re-render khi trạng thái thay đổi
+  const liked = useFavoritesStore((s) => s.isFavorite(product.id));
 
   return (
     <button

@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import { PRODUCTS, CATEGORIES } from "./data/products";
 import { useFavoritesStore } from "./store/favoritesStore";
+import { filterProducts } from "./utils/productUtils";
 import ProductCard from "./components/ProductCard";
 import FavoritesDrawer from "./components/FavoritesDrawer";
 import "./App.css";
@@ -15,14 +16,7 @@ export default function App() {
 
   // useMemo: filter lại chỉ khi category/search thay đổi
   const filteredProducts = useMemo(() => {
-    return PRODUCTS.filter((p) => {
-      const matchCat =
-        activeCategory === "Tất cả" || p.category === activeCategory;
-      const matchSearch = p.name
-        .toLowerCase()
-        .includes(searchQuery.toLowerCase().trim());
-      return matchCat && matchSearch;
-    });
+    return filterProducts(PRODUCTS, activeCategory, searchQuery);
   }, [activeCategory, searchQuery]);
 
   return (
