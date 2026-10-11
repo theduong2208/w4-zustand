@@ -1,0 +1,204 @@
+.analytics-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 5, 12, 0.75);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeInModal 0.2s ease-out;
+}
+
+@keyframes fadeInModal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.analytics-modal {
+  background: #141428;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+  color: #e2e8f0;
+}
+
+.analytics-modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 24px 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.analytics-modal__badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+}
+
+.analytics-modal__title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.analytics-modal__close {
+  background: rgba(255, 255, 255, 0.06);
+  border: none;
+  color: #94a3b8;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.analytics-modal__close:hover {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+.analytics-modal__body {
+  padding: 24px 28px;
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.analytics-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.analytics-card__label {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.analytics-card__value {
+  font-size: 18px;
+  font-weight: 800;
+  color: #38bdf8;
+}
+
+.analytics-section-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin: 20px 0 12px 0;
+}
+
+.analytics-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.analytics-bar-item__label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #cbd5e1;
+  margin-bottom: 4px;
+}
+
+.analytics-bar-track {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.analytics-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #a855f7);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.analytics-price-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.price-bucket-pill {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.price-bucket-title {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.price-bucket-count {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fbbf24;
+}
+
+.analytics-modal__footer {
+  padding: 20px 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.analytics-footer-note {
+  font-size: 12px;
+  color: #94a3b8;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.analytics-btn-primary {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #6366f1;
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.analytics-btn-primary:hover {
+  background: #4f46e5;
+}

@@ -395,3 +395,39 @@ body {
   .app-main { padding: 20px 16px 40px; }
   .commentary { padding: 20px; }
 }
+
+/* ── Virtual Grid ── */
+.virtual-grid-container {
+  position: relative;
+  width: 100%;
+}
+
+.lighthouse-guide-card {
+  margin-bottom: 24px;
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px dashed rgba(148, 163, 184, 0.25);
+  border-radius: 12px;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.lighthouse-guide-card strong {
+  color: #f1f5f9;
+}
+
+.lighthouse-guide-badge {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
