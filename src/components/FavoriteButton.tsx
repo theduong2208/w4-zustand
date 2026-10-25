@@ -1,3 +1,5 @@
+"use client";
+
 import type { Product } from "../types/product";
 import { useFavoritesStore } from "../store/favoritesStore";
 import "./FavoriteButton.css";

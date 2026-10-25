@@ -1,12 +1,16 @@
+"use client";
+
 import { useFavoritesStore } from "../store/favoritesStore";
 import "./FavoritesDrawer.css";
 
 interface Props {
-  open: boolean;
+  open?: boolean;
+  isOpen?: boolean;
   onClose: () => void;
 }
 
-export default function FavoritesDrawer({ open, onClose }: Props) {
+export default function FavoritesDrawer({ open, isOpen, onClose }: Props) {
+  const isDrawerOpen = open ?? isOpen ?? false;
   const favoriteItems = useFavoritesStore((s) => s.favoriteItems);
   const removeFavorite = useFavoritesStore((s) => s.removeFavorite);
   const clearAll = useFavoritesStore((s) => s.clearAll);
@@ -14,12 +18,12 @@ export default function FavoritesDrawer({ open, onClose }: Props) {
   return (
     <>
       <div
-        className={`drawer-backdrop ${open ? "drawer-backdrop--visible" : ""}`}
+        className={`drawer-backdrop ${isDrawerOpen ? "drawer-backdrop--visible" : ""}`}
         onClick={onClose}
         aria-hidden="true"
       />
       <aside
-        className={`drawer ${open ? "drawer--open" : ""}`}
+        className={`drawer ${isDrawerOpen ? "drawer--open" : ""}`}
         role="dialog"
         aria-label="Sản phẩm yêu thích"
         aria-modal="true"
